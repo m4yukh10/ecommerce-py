@@ -1,0 +1,13 @@
+<h1> register yoself </h1>
+
+<form method="POST" action="{% url 'user:register_buyer' %}">
+    {% csrf_token %}
+    <p>name: </p>
+    <input type="text" name="name" />
+    <p>age: </p>
+    <input type="numbers" name="age" />
+    <p>address: </p>
+    <input type="text" name="address"/>  
+    <input type="submit"/>  
+
+</form>

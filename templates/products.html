@@ -1,0 +1,36 @@
+<h1>hello, {{seller.name}}</h1>
+
+<h3> all of your products are here! </h3>
+
+<div style="position: absolute; top: 0; right: 0; padding: 10px;">
+    <form method="post" action="products">
+        {% csrf_token %}
+        <p>Product name:</p>
+        <input type="text" name="productname" />
+        <p>Type of product: </p>
+        <input type="text" name="type" />
+        <p>Quantity: </p>
+        <input type="numbers" name="quantity" />
+
+        <input type="submit" />
+    </form>
+
+    <h2> Change user </h2>
+    <a href={% url 'seller:login' %}>go</a>
+</div>
+
+<section>
+    <h4>some products</h4>
+</section>
+
+{% if existing %}
+    {% for p in existing%}
+        <p> {{p.name}}  {{p.type}} - Quantity: {{ p.quantity }}</p>
+    
+    {% endfor %}
+    
+{% endif %}    
+
+{% if product %}
+    <p>New product added: {{ product.name }} ({{ product.type }}) - Quantity: {{ product.quantity }}</p>
+{% endif %}

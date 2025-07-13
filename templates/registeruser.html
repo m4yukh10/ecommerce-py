@@ -1,0 +1,12 @@
+<h1>register seller below: </h1>
+<form method="post" action="register_seller">
+    {% csrf_token %}
+    <p>name: </p>
+    <input type="text" name="name" />
+    <p>pickup address: </p>
+    <input type="text" name="pickupAddress" />
+    <p>password: </p>
+    <input type="text" name="password" />
+
+    <input type="submit"/>
+</form>

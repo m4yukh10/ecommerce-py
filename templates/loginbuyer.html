@@ -1,0 +1,11 @@
+<h1>buyer login</h1>
+
+<form method="POST" action="{% url 'user:login_buyer' %}">
+    {% csrf_token %}
+    <p>name: </p>
+    <input type="text" name="name" />
+    <p>address: </p>
+    <input type="text" name="address"/>   
+    <input type="submit"/> 
+
+</form>

@@ -1,0 +1,33 @@
+<h1> welcome to the home page </h1>
+<h1>Welcome {% if customer_name %}{{ customer_name }}{% else %}Guest{% endif %}!</h1>
+
+
+<h3>
+    you can see all the products here: 
+</h3> 
+
+<div style="position: absolute; top: 0; right: 0; padding: 10px;">
+    <h3>Go to seller's login here:</h3>
+    <a href="{% url 'seller:login' %}">goooooo!</a>
+</div>
+
+<div style="position: absolute; top: 80px; right: 0; padding: 10px;">
+    <h3>Go to user's login here:</h3>
+    <a href="{% url 'user:login_buyer' %}">goooooo!</a>
+</div>
+
+
+{% for product in products %}
+     <p> {{ product.name }} type: ({{ product.type }})</p>
+     <p>  Quantity: {{ product.quantity }} </p>
+
+     <form method="POST" action="{% url 'user:buy' %}">
+        {% csrf_token %}
+        <input type="hidden" name="product_name" value="{{ product.name }}">
+    <button type="submit">buy me !</button>
+    </form>
+
+{% endfor %}
+
+
+

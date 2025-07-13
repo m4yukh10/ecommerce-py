@@ -1,0 +1,13 @@
+<h1>sellers login: </h1>
+
+<form method="post" action="login">
+    {% csrf_token %}
+    <p>name: </p>
+    <input type="text" name="name" />
+    <p>pickup address: </p>
+    <input type="text" name="pickupAddress" />
+    <p>password: </p>
+    <input type="text" name="password" />
+
+    <input type="submit"/>
+</form>

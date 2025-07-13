@@ -1,0 +1,19 @@
+<h1>Product Details</h1>
+
+{% if product %}
+  <p><strong>Name:</strong> {{ product.name }}</p>
+  <p><strong>Type:</strong> {{ product.type }}</p>
+  <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+
+{% else %}
+  <h2>No product info received</h2>
+{% endif %}
+
+
+<h1>items in {{user_name}}'s cart </h1>
+<p>no.of items: {{items}}</p>
+<p>{{product.name}} type: {{product.type}} </p>
+
+
+
+
